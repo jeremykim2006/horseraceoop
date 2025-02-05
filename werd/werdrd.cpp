@@ -13,9 +13,8 @@ class Horse {
 public:
     Horse(char name) : name(name), position(0) {}
 
-    // Move the horse forward by a random amount
     void move() {
-        position += rand() % 2 + 1; // Move by a random amount between 1 and 2
+        position += rand() % 2 + 1;
     }
 
     char getName() const {
@@ -93,9 +92,9 @@ int main() {
     char winner = race.determineWinner();
     cout << "Winning Horse: Horse " << winner << endl;
     if (winner == bethorse) {
-        cout << "You Won! You Get triple times the money you paid." << endl;
+        cout << "You Won!" << endl;
     } else {
-        cout << "You Lost! Now your $" << betcash << " that you just bet is now mine!" << endl;
+        cout << "You Lost!" << endl;
     }
 
     system("pause");
