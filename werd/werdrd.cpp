@@ -8,7 +8,6 @@
 
 using namespace std;
 
-// Class representing a Horse
 class Horse {
 public:
     Horse(char name) : name(name), position(0) {}
@@ -37,19 +36,16 @@ private:
     int position;
 };
 
-// Class representing the Race
 class Race {
 public:
     Race() {
-        srand(static_cast<unsigned int>(time(0))); // Seed random number generator
+        srand(static_cast<unsigned int>(time(0))); 
     }
 
-    // Add a horse to the race
     void addHorse(const Horse& horse) {
         horses.push_back(horse);
     }
 
-    // Start the race
     void start() {
         for (int a = 0; a <= 25; a++) {
             system("cls");
@@ -61,7 +57,6 @@ public:
         }
     }
 
-    // Determine the winner
     char determineWinner() {
         return max_element(horses.begin(), horses.end(), [](const Horse& a, const Horse& b) {
             return a.getPosition() < b.getPosition();
